@@ -9,11 +9,7 @@ install:
 - mvn install
 
 script:
-- docker build -t blog .
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker build -t rest-in-cloud .
 - docker tag rest-in-cloud:latest tommyziegler/rest-in-cloud:latest
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
 - docker push tommyziegler/rest-in-cloud:latest
-
-env:
-  global:
-  - secure: Z0vOoMTFi7zHPyEQr87IlJWwrBql9C/Xl9ToqJjTdqRJmiPLBj6qg3ChXY9BJ/eJWFUHZn0pVNI4iaulc2hNwIeCq8R1Ky2EyTGdUola+2V3Q/04dcTdHb+8ls4lvqxJbBfwQP8GSrMoiFdrv6g7x5Bij3d0k20V+6oXLkJO+Xv0keqBeoMBNmhHsmp5j6K6CvMf39SfSwHnLMdz94h8Q1jFpP4GeRTEGx4CUgkGYtNMXAg0bKhawQPYoPNkSEnkIsIiDV9+Mx7qkd6yIOzvNZI4S1ynCnecJsyGiUdohDZTSY9TVPBLc/IBZ3GyK6JONz2Hi4zKOVBoN1S7oZJHJtm7Rk7aNcA1jCvU3EX5pJd6vpH6XwgyRXAJFfK7QHKrsa95DQHkKveTNPyv3GCy85IDwxAKiOkFzAVewgJvu7HfbKrc11SEluESmtLr+2U3J3Lz8/3Lic22vwnkHAIFUGjfEVOdpV2j+PgCfY7eRhjggHnnZesNgEAq2aG+YGzaKpOdSDIIC8zIH8jJxas1GwU6znXZV6I5MYf+q19Kabo0rB0dAlijV+6YV1O2WCTy9Ltsf7ksqTO0jlQjL+PJsvayebB6FR4Fn5rU4/80hSXcufszeS31NOQv3hMkZCzww4PUkaHroSn7kic8APr7S97+32EWyQP5529109g8ESc=
