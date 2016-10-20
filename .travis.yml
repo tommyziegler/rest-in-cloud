@@ -1,13 +1,14 @@
 language: java
 jdk:
 - oraclejdk8
+
 services:
 - docker
 
-script:
+install:
 - mvn install
 
-install:
+script:
 - docker build -t blog .
 - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 - docker tag rest-in-cloud:latest tommyziegler/rest-in-cloud:latest
